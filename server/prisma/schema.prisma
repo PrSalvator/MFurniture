@@ -5,7 +5,8 @@
 // Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
 
 generator client {
-  provider = "prisma-client-js"
+  provider        = "prisma-client-js"
+  previewFeatures = ["relationJoins"]
 }
 
 datasource db {
@@ -25,7 +26,7 @@ model Shop {
   id           Int           @id @default(autoincrement())
   number       String        @unique
   director_id  Int
-  director     Director      @relation(fields: [director_id], references: [id])
+  director     Director      @relation(fields: [director_id], references: [id], onDelete: Cascade)
   orderOnShops OrderOnShop[]
 }
 
@@ -39,15 +40,15 @@ model Furniture {
 model Order {
   id           Int           @id @default(autoincrement())
   furniture_id Int
-  furniture    Furniture     @relation(fields: [furniture_id], references: [id])
+  furniture    Furniture     @relation(fields: [furniture_id], references: [id], onDelete: Cascade)
   orderOnShops OrderOnShop[]
 }
 
 model OrderOnShop {
   order_id Int
   shop_id  Int
-  order    Order @relation(fields: [order_id], references: [id])
-  shop     Shop  @relation(fields: [shop_id], references: [id])
+  order    Order @relation(fields: [order_id], references: [id], onDelete: Cascade)
+  shop     Shop  @relation(fields: [shop_id], references: [id], onDelete: Cascade)
 
   @@id([order_id, shop_id])
 }
