@@ -31,7 +31,7 @@ model Shop {
 
 model Furniture {
   id     Int     @id @default(autoincrement())
-  name   String
+  name   String  @unique
   file   String
   orders Order[]
 }
