@@ -2,6 +2,7 @@ import { createBrowserRouter, Navigate } from "react-router-dom"
 import { LoadComponent } from "../../shared/components/load_component"
 import { lazy } from "react"
 import { ERoutes } from "@/shared/enum/routes"
+import { Layout } from "@/widgets/layout"
 
 const OrdersPage = LoadComponent(lazy(async () => import("@/pages/orders")))
 const ShopsPage = LoadComponent(lazy(async () => import("@/pages/shops")))
@@ -10,6 +11,7 @@ const FurnituresPage = LoadComponent(lazy(async () => import("@/pages/furnitures
 
 export const routes = createBrowserRouter([
     {
+        element: <Layout/>,
         children: [
             {
                 path: ERoutes.ALL_ORDERS,
