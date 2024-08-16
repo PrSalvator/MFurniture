@@ -1,9 +1,12 @@
 import express, { Request, Response, NextFunction } from "express";
 import { router } from "./src/routes";
 import cors from "cors";
+import fileUpload from "express-fileupload";
 
 const app = express();
 
+app.use(express.static("./src/static/"))
+app.use(fileUpload());
 app.use(cors());
 app.use(express.json());
 app.use("/api", router);
