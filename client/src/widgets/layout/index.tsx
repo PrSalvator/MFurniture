@@ -5,7 +5,7 @@ export const Layout = () => {
   return (
     <div className="font-lato p-4 bg-light-gray min-h-screen flex space-x-6">
       <section>
-        <div className="text-h2 flex space-x-2 mb-3">
+        <div className="text-h2 flex space-x-2 mb-3 font-[500] items-center">
           <img src="./public/logo.svg"/>
           <h1>MFurniture</h1>
         </div>
