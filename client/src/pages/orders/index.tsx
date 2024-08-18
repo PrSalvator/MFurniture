@@ -1,6 +1,10 @@
+import { OrdersTable } from "@/widgets/tables/ordersTable";
+
 const Orders = () => {
     return(
-        <h1>Orders</h1>
+        <div>
+            <OrdersTable/>
+        </div>
     )
 }
 
