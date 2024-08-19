@@ -22,5 +22,9 @@ export const AddOrderSlice = async (
 export const EditOrderSlice = async (
   order: IOrderEditPort
 ): Promise<AxiosResponse<void>> => {
-  return instance.put(EApi.EDIT_ORDER + `/${order.id}`);
+  return instance.put(EApi.EDIT_ORDER + `/${order.id}`, order);
+};
+
+export const DeleteOrder = async (id: number) => {
+  return instance.delete(EApi.DELETE_ORDER + `/${id}`);
 };

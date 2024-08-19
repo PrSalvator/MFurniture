@@ -1,3 +1,4 @@
+import { useDeleteOrderPresenter } from "@/entities/case/order/delete_order/presenter";
 import { useGetOrdersPresenter } from "@/entities/case/order/get_all/presenter";
 import {
   Table,
@@ -12,9 +13,11 @@ import { NavLink } from "react-router-dom";
 
 export const OrdersTable = () => {
   const { data, isPending } = useGetOrdersPresenter();
+  const { Modal, handleOpen } = useDeleteOrderPresenter();
   if (isPending) return <h3 className="text-h3">Загрузка...</h3>;
   return (
     <Table>
+      <Modal/>
       <TableHeader>
         <TableRow>
           <TableHead>Мебель</TableHead>
@@ -34,7 +37,7 @@ export const OrdersTable = () => {
                 <NavLink to={ERoutes.EDIT_ORDER} state={order}>
                   <button>Red</button>
                 </NavLink>
-                <button>Del</button>
+                <button onClick={() => handleOpen(order)}>Del</button>
               </TableCell>
             </TableRow>
           ))}
