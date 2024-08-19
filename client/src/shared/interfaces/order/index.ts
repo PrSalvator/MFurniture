@@ -11,3 +11,7 @@ export interface IOrderAddPort {
   shops_id: number[];
   furniture_id: number;
 }
+
+export interface IOrderEditPort extends IOrderAddPort{
+  id: number;
+}

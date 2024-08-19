@@ -7,6 +7,8 @@ import {
   TableHeader,
   TableRow,
 } from "@/shared/components/table";
+import { ERoutes } from "@/shared/enum/routes";
+import { NavLink } from "react-router-dom";
 
 export const OrdersTable = () => {
   const { data, isPending } = useGetOrdersPresenter();
@@ -29,7 +31,9 @@ export const OrdersTable = () => {
                 {order.shops.map((order) => order.number).join(",")}
               </TableCell>
               <TableCell>
-                <button>Red</button>
+                <NavLink to={ERoutes.EDIT_ORDER} state={order}>
+                  <button>Red</button>
+                </NavLink>
                 <button>Del</button>
               </TableCell>
             </TableRow>
