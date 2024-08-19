@@ -1,14 +1,15 @@
 import { useGetAllOrdersUseCase } from "@/entities/case/order/get_all/use_case";
-import { Snack, SnackbarContext } from "@/shared/contexts/snackbar";
-import { useContext, useEffect } from "react";
+import { useSnackbar } from "@/shared/hooks/useSnackbar";
+import { useEffect } from "react";
 
-export const UseGetOrdersPresenter = () => {
+export const useGetOrdersPresenter = () => {
   const { data, isPending, error, isError } = useGetAllOrdersUseCase();
-  const {snack, setSnack} = useContext(SnackbarContext);
+  const {showErrorMessage} = useSnackbar();
 
   useEffect(() => {
-    if (!isError) {
-      setSnack(new Snack({message: 'Some error', color:'error', open: true}))
+    if (isError) {
+      alert(error)
+      showErrorMessage();
     }
   }, [error]);
 

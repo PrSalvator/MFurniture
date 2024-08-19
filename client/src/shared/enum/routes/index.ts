@@ -4,4 +4,5 @@ export enum ERoutes {
   ALL_SHOPS = "/shops",
   ALL_FURNITURES = "/furnitures",
   ALL_ORDERS = "/orders",
+  ADD_ORDER = `${ERoutes.ALL_ORDERS}/add`
 }

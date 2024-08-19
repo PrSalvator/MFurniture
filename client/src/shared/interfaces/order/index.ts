@@ -6,3 +6,8 @@ export interface IOrderDto {
   shops: IShortShopDto[];
   furniture: IFurnitureDto;
 }
+
+export interface IOrderAddPort {
+  shops_id: number[];
+  furniture_id: number;
+}

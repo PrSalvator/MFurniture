@@ -1,4 +1,4 @@
-import { UseGetOrdersPresenter } from "@/entities/case/order/get_all/presenter";
+import { useGetOrdersPresenter } from "@/entities/case/order/get_all/presenter";
 import {
   Table,
   TableBody,
@@ -9,7 +9,7 @@ import {
 } from "@/shared/components/table";
 
 export const OrdersTable = () => {
-  const { data, isPending } = UseGetOrdersPresenter();
+  const { data, isPending } = useGetOrdersPresenter();
   if (isPending) return <h3 className="text-h3">Загрузка...</h3>;
   return (
     <Table>

@@ -1,3 +1,5 @@
 export enum EQueryKeys {
   ALL_ORDERS = "ALL_ORDERS",
+  ALL_FURNITURES = "ALL_FURNITURES",
+  ALL_SHOPS = "ALL_SHOPS"
 }
