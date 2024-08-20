@@ -24,3 +24,8 @@ export const EditDirectorSlice = async (
 ): Promise<AxiosResponse<void>> => {
   return instance.put(EApi.EDIT_DIRECTOR + `/${data.id}`, data);
 };
+
+
+export const DeleteDirectorSlice = async (id: number): Promise<AxiosResponse<void>> => {
+  return instance.delete(EApi.DELETE_DIRECTOR + `/${id}`)
+}

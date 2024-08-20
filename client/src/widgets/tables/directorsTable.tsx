@@ -1,3 +1,4 @@
+import { useDeleteDirectorPresenter } from "@/entities/case/director/delete/presenter";
 import { useGetDirectorsPresenter } from "@/entities/case/director/get_all/presenter";
 import {
   Table,
@@ -12,11 +13,13 @@ import { Button } from "@mui/material";
 import { NavLink } from "react-router-dom";
 
 export const DirectorsTable = () => {
-    const {data, isPending} = useGetDirectorsPresenter();
+  const { data, isPending } = useGetDirectorsPresenter();
+  const { Modal, handleOpen } = useDeleteDirectorPresenter();
 
   if (isPending) return <>Loading...</>;
   return (
     <Table>
+      <Modal />
       <TableHeader>
         <TableRow>
           <TableHead>Фамилия</TableHead>
@@ -35,7 +38,7 @@ export const DirectorsTable = () => {
                 <NavLink to={ERoutes.EDIT_DIRECTOR} state={director}>
                   <Button>Red</Button>
                 </NavLink>
-                <Button onClick={() => {}}>Del</Button>
+                <Button onClick={() => handleOpen(director)}>Del</Button>
               </TableCell>
             </TableRow>
           ))}
