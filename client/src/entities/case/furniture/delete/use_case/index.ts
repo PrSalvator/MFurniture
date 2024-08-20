@@ -1,21 +1,23 @@
-import { DeleteOrder } from "@/entities/slice/order";
+import { DeleteFurnitureSlice } from "@/entities/slice/furniture";
 import { EQueryKeys } from "@/shared/enum/query_keys";
 import { useSnackbar } from "@/shared/hooks/useSnackbar";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 
-export const useDeleteOrderUseCase = (closeWindow: () => void) => {
+export const useDeleteFurnitureUseCase = (closeWindow: () => void) => {
+  const refetchFurnitures = useQueryClient();
   const { showErrorMessage, showSuccessMessage } = useSnackbar();
-  const refetchOrders = useQueryClient();
   const callback = async (id: number) => {
-    return DeleteOrder(id);
+    return DeleteFurnitureSlice(id);
   };
 
   return useMutation({
     mutationFn: callback,
     onSuccess: () => {
-      refetchOrders.invalidateQueries({ queryKey: [EQueryKeys.ALL_ORDERS] });
+      refetchFurnitures.invalidateQueries({
+        queryKey: [EQueryKeys.ALL_FURNITURES],
+      });
       closeWindow();
-      showSuccessMessage("Заказ успешно удален");
+      showSuccessMessage("Удаление мебели прошло успешно");
     },
     onError: () => {
       showErrorMessage();
