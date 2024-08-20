@@ -30,6 +30,7 @@ const AddDirectorPage = LoadComponent(
 const EditDirectorPage = LoadComponent(
   lazy(async () => import("@/pages/edit_director"))
 );
+const AddShopPage = LoadComponent(lazy(async () => import("@/pages/add_shop")));
 
 export const routes = createBrowserRouter([
   {
@@ -74,6 +75,10 @@ export const routes = createBrowserRouter([
       {
         path: ERoutes.EDIT_DIRECTOR,
         element: <EditDirectorPage />,
+      },
+      {
+        path: ERoutes.ADD_SHOP,
+        element: <AddShopPage />,
       },
     ],
   },

@@ -11,3 +11,8 @@ export interface IShopDto {
   number: string;
   director: IDirectorDto;
 }
+
+export interface IAddShopPort {
+  number: string;
+  director_id: number;
+}

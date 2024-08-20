@@ -9,5 +9,6 @@ export enum ERoutes {
   ADD_FURNITURE = `${ERoutes.ALL_FURNITURES}/add`,
   EDIT_FURNITURE = `${ERoutes.ALL_FURNITURES}/edit`,
   ADD_DIRECTOR = `${ERoutes.ALL_DIRECTORS}/add`,
-  EDIT_DIRECTOR = `${ERoutes.ALL_DIRECTORS}/edit`
+  EDIT_DIRECTOR = `${ERoutes.ALL_DIRECTORS}/edit`,
+  ADD_SHOP = `${ERoutes.ALL_SHOPS}/add`
 }

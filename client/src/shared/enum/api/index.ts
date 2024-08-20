@@ -12,4 +12,5 @@ export enum EApi {
   ADD_DIRECTOR = `${EApi.DIRECTORS}/add`,
   EDIT_DIRECTOR= `${EApi.DIRECTORS}`,
   DELETE_DIRECTOR = `${EApi.DIRECTORS}`,
+  ADD_SHOP = `${EApi.SHOPS}/add`
 }
