@@ -4,3 +4,5 @@ export interface IDirectorDto {
   firstname: string;
   patronymic?: string;
 }
+
+export type IAddDirectorPort = Omit<IDirectorDto, "id">;

@@ -8,4 +8,5 @@ export enum ERoutes {
   EDIT_ORDER = `${ERoutes.ALL_ORDERS}/edit`,
   ADD_FURNITURE = `${ERoutes.ALL_FURNITURES}/add`,
   EDIT_FURNITURE = `${ERoutes.ALL_FURNITURES}/edit`,
+  ADD_DIRECTOR = `${ERoutes.ALL_DIRECTORS}/add`
 }
