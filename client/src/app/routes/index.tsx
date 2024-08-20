@@ -27,6 +27,9 @@ const EditFurniturePage = LoadComponent(
 const AddDirectorPage = LoadComponent(
   lazy(async () => import("@/pages/add_director"))
 );
+const EditDirectorPage = LoadComponent(
+  lazy(async () => import("@/pages/edit_director"))
+);
 
 export const routes = createBrowserRouter([
   {
@@ -67,6 +70,10 @@ export const routes = createBrowserRouter([
       {
         path: ERoutes.ADD_DIRECTOR,
         element: <AddDirectorPage />,
+      },
+      {
+        path: ERoutes.EDIT_DIRECTOR,
+        element: <EditDirectorPage />,
       },
     ],
   },

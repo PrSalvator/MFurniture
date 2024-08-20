@@ -32,7 +32,7 @@ export const DirectorsTable = () => {
               <TableCell>{director.firstname}</TableCell>
               <TableCell>{director.patronymic}</TableCell>
               <TableCell>
-                <NavLink to={""}>
+                <NavLink to={ERoutes.EDIT_DIRECTOR} state={director}>
                   <Button>Red</Button>
                 </NavLink>
                 <Button onClick={() => {}}>Del</Button>

@@ -6,3 +6,7 @@ export interface IDirectorDto {
 }
 
 export type IAddDirectorPort = Omit<IDirectorDto, "id">;
+
+export interface IEditDirectorPort extends IAddDirectorPort {
+  id: number;
+}
