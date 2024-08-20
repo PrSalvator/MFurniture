@@ -6,5 +6,6 @@ export enum ERoutes {
   ALL_ORDERS = "/orders",
   ADD_ORDER = `${ERoutes.ALL_ORDERS}/add`,
   EDIT_ORDER = `${ERoutes.ALL_ORDERS}/edit`,
-  ADD_FURNITURE = `${ERoutes.ALL_FURNITURES}/add`
+  ADD_FURNITURE = `${ERoutes.ALL_FURNITURES}/add`,
+  EDIT_FURNITURE = `${ERoutes.ALL_FURNITURES}/edit`,
 }

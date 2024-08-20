@@ -8,7 +8,9 @@ import {
   TableRow,
 } from "@/shared/components/table";
 import { ADDRESS } from "@/shared/constants";
+import { ERoutes } from "@/shared/enum/routes";
 import { Button } from "@mui/material";
+import { NavLink } from "react-router-dom";
 
 export const FurnituresTable = () => {
   const { data, isPending } = useGetAllFurnituresPresenter();
@@ -31,7 +33,9 @@ export const FurnituresTable = () => {
                 <a href={`${ADDRESS}/${furniture.file}`}>{furniture.file}</a>
               </TableCell>
               <TableCell>
-                <Button>Red</Button>
+                <NavLink to={ERoutes.EDIT_FURNITURE} state={furniture}>
+                  <Button>Red</Button>
+                </NavLink>
                 <Button>Del</Button>
               </TableCell>
             </TableRow>

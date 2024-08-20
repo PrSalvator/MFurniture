@@ -8,3 +8,7 @@ export interface IAddFurniturePort {
   name: string;
   file: FileList;
 }
+
+export interface IEditFurniturePort extends IAddFurniturePort {
+  id: number;
+}

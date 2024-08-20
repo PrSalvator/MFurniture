@@ -5,5 +5,6 @@ export enum EApi {
   FURNITURES = "furniture",
   EDIT_ORDER = `${EApi.ORDERS}`,
   DELETE_ORDER = `${EApi.ORDERS}`,
-  ADD_FURNITURE = `${EApi.FURNITURES}/add`
+  ADD_FURNITURE = `${EApi.FURNITURES}/add`,
+  EDIT_FURNITURE = `${EApi.FURNITURES}`,
 }

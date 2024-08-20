@@ -21,6 +21,9 @@ const EditOrderPage = LoadComponent(
 const AddFurniturePage = LoadComponent(
   lazy(async () => import("@/pages/add_furniture"))
 );
+const EditFurniturePage = LoadComponent(
+  lazy(async () => import("@/pages/edit_furniture"))
+);
 
 export const routes = createBrowserRouter([
   {
@@ -53,6 +56,10 @@ export const routes = createBrowserRouter([
       {
         path: ERoutes.ADD_FURNITURE,
         element: <AddFurniturePage />,
+      },
+      {
+        path: ERoutes.EDIT_FURNITURE,
+        element: <EditFurniturePage />,
       },
     ],
   },
