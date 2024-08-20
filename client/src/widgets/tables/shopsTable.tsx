@@ -29,7 +29,7 @@ export const ShopsTable = () => {
               <TableCell>{shop.number}</TableCell>
               <TableCell>{shop.director.firstname}</TableCell>
               <TableCell>
-                <NavLink to={ERoutes.ADD_SHOP} state={shop}>
+                <NavLink to={ERoutes.EDIT_SHOP} state={shop}>
                   <button>Red</button>
                 </NavLink>
                 <button onClick={() => {}}>Del</button>

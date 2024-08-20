@@ -16,3 +16,7 @@ export interface IAddShopPort {
   number: string;
   director_id: number;
 }
+
+export interface IEditShopPort extends IAddShopPort{
+  id: number;
+}

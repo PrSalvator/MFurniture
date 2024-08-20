@@ -3,18 +3,18 @@ import { useEditDirectorUseCase } from "@/entities/case/director/edit/use_case";
 import { IDirectorDto, IEditDirectorPort } from "@/shared/interfaces/director";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { editDirectorSchema } from "@/entities/case/director/edit/schema";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { useEffect } from "react";
-import { useSnackbar } from "@/shared/hooks/useSnackbar";
+import { ERoutes } from "@/shared/enum/routes";
 
 export const useEditDirectorPresenter = () => {
-  const { showErrorMessage } = useSnackbar();
+  const navigate = useNavigate()
   const { state }: { state: IDirectorDto } = useLocation();
-  const { mutateAsync, isPending, error, isError } = useEditDirectorUseCase();
+  const { mutateAsync, isPending } = useEditDirectorUseCase();
 
   useEffect(() => {
-    if (isError) showErrorMessage();
-  }, [error]);
+    if (state === null) navigate(ERoutes.ALL_DIRECTORS);
+  }, [state]);
 
   const form = useForm<IEditDirectorPort>({
     resolver: yupResolver(editDirectorSchema),

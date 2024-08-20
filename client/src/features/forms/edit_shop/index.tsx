@@ -1,4 +1,4 @@
-import { IAddShopPort } from "@/shared/interfaces/shop";
+import { IEditShopPort } from "@/shared/interfaces/shop";
 import {
     Button,
   FormControl,
@@ -12,27 +12,28 @@ import { BaseSyntheticEvent } from "react";
 import { UseFormReturn } from "react-hook-form";
 import { useAddShopFormPresenter } from "@/features/forms/add_shop/presenter";
 
-interface IAddShopFormProps {
-  form: UseFormReturn<IAddShopPort>;
+interface IEditShopFormProps {
+  form: UseFormReturn<IEditShopPort>;
   handleSubmit: (e: BaseSyntheticEvent) => Promise<void>;
   isPending: boolean;
 }
 
-export const AddShopForm = ({
+export const EditShopForm = ({
   form,
   handleSubmit,
   isPending,
-}: IAddShopFormProps) => {
+}: IEditShopFormProps) => {
   const {
     register,
     formState: { errors },
+    getValues
   } = form;
   const { directors, directorsId, handleChange } = useAddShopFormPresenter();
 
   return (
     <form onSubmit={handleSubmit}>
       <TextField
-        label="Номер"
+      label="Номер"
         error={Boolean(errors.number)}
         helperText={errors.number?.message}
         {...register("number")}
@@ -40,7 +41,7 @@ export const AddShopForm = ({
       <FormControl error={Boolean(errors.director_id)}>
         <InputLabel>Начальник цеха</InputLabel>
         <Select
-          value={directorsId}
+          value={directorsId ? directorsId : getValues("director_id").toString()}
           className="w-[200px]"
           {...register("director_id")}
           onChange={handleChange}
