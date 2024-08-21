@@ -5,7 +5,7 @@ const AddDirector = () => {
   const {isPending, form, handleSubmit} = useAddDirectorPresenter();
   return (
     <div>
-      <h1>Добавление начальника</h1>
+      <h1 className="text-h1 mb-3">Добавление начальника</h1>
       <AddDirectorForm isPending={isPending} form={form} handleSubmit={handleSubmit}/>
     </div>
   );

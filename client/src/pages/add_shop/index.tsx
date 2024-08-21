@@ -5,7 +5,7 @@ const AddShop = () => {
   const {form, handleSubmit, isPending} = useAddShopPresenter();
   return (
     <div>
-      <h1>Добавление цеха</h1>
+      <h1 className="text-h1 mb-3">Добавление цеха</h1>
       <AddShopForm form={form} handleSubmit={handleSubmit} isPending={isPending}/>
     </div>
   );

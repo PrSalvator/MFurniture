@@ -5,7 +5,7 @@ const EditDirector = () => {
     const {handleSubmit, form, isPending} = useEditDirectorPresenter();
     return (
         <div>
-            <h1>Редактирование начальника цеха</h1>
+            <h1 className="text-h1 mb-3">Редактирование начальника цеха</h1>
             <EditDirectorForm handleSubmit={handleSubmit} form={form} isPending={isPending}/>
         </div>
     )

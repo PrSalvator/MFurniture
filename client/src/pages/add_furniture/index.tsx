@@ -6,7 +6,7 @@ const AddFurniture = () => {
 
     return(
         <div>
-            <h1>Добавление мебели</h1>
+            <h1 className="text-h1 mb-3">Добавление мебели</h1>
             <AddFurnitureForm handleSubmit={handleSubmit} form={form} isPending={isPending}/>
         </div>
     )

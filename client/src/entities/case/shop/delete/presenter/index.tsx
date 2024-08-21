@@ -1,6 +1,7 @@
-import { useDeleteOrderUseCase } from "@/entities/case/order/delete_order/use_case";
 import { useDialog } from "@/shared/hooks/useDialog";
-import { IOrderDto } from "@/shared/interfaces/order";
+import { useDeleteShopUseCase } from "@/entities/case/shop/delete/use_case";
+import { useState } from "react";
+import { IShopDto } from "@/shared/interfaces/shop";
 import {
   Button,
   Dialog,
@@ -8,19 +9,18 @@ import {
   DialogContent,
   DialogTitle,
 } from "@mui/material";
-import { useState } from "react";
 
-export const useDeleteOrderPresenter = () => {
-  const [order, setOrder] = useState<IOrderDto>();
+export const useDeleteShopPresenter = () => {
+  const [shop, setShop] = useState<IShopDto>();
   const { open, handleClose, handleOpen: openDialog } = useDialog();
-  const { mutateAsync, isPending } = useDeleteOrderUseCase(handleClose);
+  const { mutateAsync, isPending } = useDeleteShopUseCase(handleClose);
 
   const handleDelete = () => {
-    if (order) mutateAsync(order.id);
+    if (shop) mutateAsync(shop.id);
   };
 
-  const handleOpen = (order: IOrderDto) => {
-    setOrder(order);
+  const handleOpen = (shop: IShopDto) => {
+    setShop(shop);
     openDialog();
   };
 
@@ -29,8 +29,7 @@ export const useDeleteOrderPresenter = () => {
       <Dialog open={open} onClose={handleClose}>
         <DialogTitle>Удаление заказа</DialogTitle>
         <DialogContent>
-          Вы уверены, что хотите удалить заказ на изготовление "
-          {order?.furniture.name}" ?
+          Вы уверены, что хотите удалить цех с номером {shop?.number}?
         </DialogContent>
         <DialogActions>
           <Button onClick={() => handleDelete()} variant="outlined">Удалить</Button>

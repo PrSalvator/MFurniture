@@ -5,7 +5,7 @@ const EditOrder = () => {
   const {form, handleSubmit, isPending} = useEditOrderPresenter();
 
   return <div>
-    <h1>Редактирование заказа</h1>
+    <h1 className="text-h1 mb-3">Редактирование заказа</h1>
     <EditOrderForm form={form} handleSubmit={handleSubmit} isPending={isPending}/>
   </div>;
 };

@@ -18,3 +18,7 @@ export const addShopSlice = async (
 export const editShopSlice = async (data: IEditShopPort): Promise<AxiosResponse<void>> => {
   return instance.put(EApi.EDIT_SHOP + `/${data.id}`, data);
 }
+
+export const deleteShopSlice = async (id: number): Promise<AxiosResponse<void>> => {
+  return instance.delete(EApi.DELETE_SHOP + `/${id}`);
+}

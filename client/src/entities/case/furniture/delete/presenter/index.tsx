@@ -32,8 +32,8 @@ export const useDeleteFurniturePresenter = () => {
           Вы уверены, что хотите удалить мебель "{furniture?.name}" ?
         </DialogContent>
         <DialogActions>
-          <Button onClick={() => handleDelete()}>Удалить</Button>
-          <Button onClick={() => handleClose()}>Отмена</Button>
+          <Button onClick={() => handleDelete()} variant="outlined">Удалить</Button>
+          <Button onClick={() => handleClose()} variant="contained">Отмена</Button>
         </DialogActions>
       </Dialog>
     );

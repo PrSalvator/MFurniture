@@ -9,6 +9,9 @@ import {
   TableRow,
 } from "@/shared/components/table";
 import { ERoutes } from "@/shared/enum/routes";
+import { mdiPencil, mdiTrashCanOutline } from "@mdi/js";
+import Icon from "@mdi/react";
+import { Button } from "@mui/material";
 import { NavLink } from "react-router-dom";
 
 export const OrdersTable = () => {
@@ -17,7 +20,7 @@ export const OrdersTable = () => {
   if (isPending) return <h3 className="text-h3">Загрузка...</h3>;
   return (
     <Table>
-      <Modal/>
+      <Modal />
       <TableHeader>
         <TableRow>
           <TableHead>Мебель</TableHead>
@@ -31,17 +34,29 @@ export const OrdersTable = () => {
             <TableRow>
               <TableCell>{order.furniture.name}</TableCell>
               <TableCell>
-                {order.shops.map((order) => order.number).join(",")}
+                {order.shops.map((order) => order.number).join(", ")}
               </TableCell>
               <TableCell>
                 <NavLink to={ERoutes.EDIT_ORDER} state={order}>
-                  <button>Red</button>
+                  <Button>
+                    <Icon
+                      path={mdiPencil}
+                      size="24px"
+                      className="text-dark-gray"
+                    />
+                  </Button>
                 </NavLink>
-                <button onClick={() => handleOpen(order)}>Del</button>
+                <Button onClick={() => handleOpen(order)}>
+                  <Icon
+                    path={mdiTrashCanOutline}
+                    size="24px"
+                    className="text-dark-gray"
+                  />
+                </Button>
               </TableCell>
             </TableRow>
           ))}
-        {!data && (
+        {data?.length === 0 && (
           <TableRow>
             <TableCell>...</TableCell>
             <TableCell>...</TableCell>

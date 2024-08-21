@@ -6,7 +6,7 @@ const EditFurniture = () => {
 
   return (
     <div>
-      <h1>Редактирование мебели</h1>
+      <h1 className="text-h1 mb-3">Редактирование мебели</h1>
       <EditFurnitureForm
         form={form}
         handleSubmit={handleSubmit}

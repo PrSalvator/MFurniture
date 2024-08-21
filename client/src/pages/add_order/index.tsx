@@ -6,7 +6,7 @@ const AddOrder = () => {
 
   return (
     <div>
-      <h1>Новый заказ</h1>
+      <h1 className="text-h1 mb-3">Новый заказ</h1>
       <AddOrderForm form={form} isPending={isPending} handleSubmit={handleSubmit}/>
     </div>
   );

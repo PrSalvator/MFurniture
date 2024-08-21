@@ -9,6 +9,8 @@ import {
   TableRow,
 } from "@/shared/components/table";
 import { ERoutes } from "@/shared/enum/routes";
+import { mdiPencil, mdiTrashCanOutline } from "@mdi/js";
+import Icon from "@mdi/react";
 import { Button } from "@mui/material";
 import { NavLink } from "react-router-dom";
 
@@ -25,6 +27,7 @@ export const DirectorsTable = () => {
           <TableHead>Фамилия</TableHead>
           <TableHead>Имя</TableHead>
           <TableHead>Отчество</TableHead>
+          <TableHead>Действие</TableHead>
         </TableRow>
       </TableHeader>
       <TableBody>
@@ -36,13 +39,25 @@ export const DirectorsTable = () => {
               <TableCell>{director.patronymic}</TableCell>
               <TableCell>
                 <NavLink to={ERoutes.EDIT_DIRECTOR} state={director}>
-                  <Button>Red</Button>
+                  <Button>
+                    <Icon
+                      path={mdiPencil}
+                      size="24px"
+                      className="text-dark-gray"
+                    />
+                  </Button>
                 </NavLink>
-                <Button onClick={() => handleOpen(director)}>Del</Button>
+                <Button onClick={() => handleOpen(director)}>
+                  <Icon
+                    path={mdiTrashCanOutline}
+                    size="24px"
+                    className="text-dark-gray"
+                  />
+                </Button>
               </TableCell>
             </TableRow>
           ))}
-        {!data && (
+        {data?.length === 0 && (
           <TableRow>
             <TableCell>...</TableCell>
             <TableCell>...</TableCell>
