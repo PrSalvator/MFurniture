@@ -30,7 +30,7 @@ export const useDeleteDirectorPresenter = () => {
     return (
       director && (
         <Dialog open={open} onClose={handleClose}>
-          <DialogTitle>Удаление директора</DialogTitle>
+          <DialogTitle>Удаление начальника</DialogTitle>
           <DialogContent>
             Вы уверены, что хотите удалить начальника цеха "{getFio(director!)}"
             ?
