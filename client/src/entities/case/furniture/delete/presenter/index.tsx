@@ -27,7 +27,7 @@ export const useDeleteFurniturePresenter = () => {
   const Modal = () => {
     return (
       <Dialog open={open} onClose={handleClose}>
-        <DialogTitle>Удаление заказа</DialogTitle>
+        <DialogTitle>Удаление мебели</DialogTitle>
         <DialogContent>
           Вы уверены, что хотите удалить мебель "{furniture?.name}" ?
         </DialogContent>

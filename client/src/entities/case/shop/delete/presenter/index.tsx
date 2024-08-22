@@ -27,7 +27,7 @@ export const useDeleteShopPresenter = () => {
   const Modal = () => {
     return (
       <Dialog open={open} onClose={handleClose}>
-        <DialogTitle>Удаление заказа</DialogTitle>
+        <DialogTitle>Удаление цеха</DialogTitle>
         <DialogContent>
           Вы уверены, что хотите удалить цех с номером {shop?.number}?
         </DialogContent>
